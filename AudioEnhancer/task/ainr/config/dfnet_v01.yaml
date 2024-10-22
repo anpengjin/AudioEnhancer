@@ -1,0 +1,30 @@
+# trainer
+batch_size: 8
+num_workers: 4
+epochs: 100
+lr: 0.001
+
+# FFT parameters
+sr: 16000
+win_length: 480
+hop_length: 160
+n_fft: 512
+
+# train/val data
+noisy_list: 'D:\Anpj\100_data\Demand\DS_10283_2791\noisy_trainset_56spk_wav.lst,D:\Anpj\100_data\Demand\DS_10283_2791\noisy_trainset_28spk_wav.lst'
+clean_list: 'D:\Anpj\100_data\Demand\DS_10283_2791\clean_trainset_56spk_wav.lst,D:\Anpj\100_data\Demand\DS_10283_2791\clean_trainset_28spk_wav.lst'
+noise_list:
+babble_list:
+rir_list:
+
+# dataset
+snr_low: 0            # Min SNR for noise augmentation
+snr_high: 15          # Max SNR for noise augmentation
+pur_noise_prob: 0.2   # the prob of (no speech and only have noise)
+rir_prob: 0.5  # the prob of add rir
+data_len: 5    # the len of train data for single step  (秒)
+
+# infer
+infer_data_len: 5
+infer_lst: 'D:\Anpj\100_data\Demand\DS_10283_2791\noisy_trainset_56spk_wav.lst'
+infer_save_dir: 'D:\Anpj\005_speech_enhance\002_code\data\01_dfnet'
